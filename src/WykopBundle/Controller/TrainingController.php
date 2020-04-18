@@ -290,7 +290,7 @@ class TrainingController extends Controller {
 	    //Send new entry to Wykop
 	    $wykop = $this->get('WykopApi');
 	    $wykop->setUserKey($token->getCredentials());
-	    $result = $wykop->doRequest('entries/add', array('body' => $entry_content, 'embed' => $entity->getEmbed()));
+	    $result = $wykop->doRequest('Entries/Add', array('body' => $entry_content, 'embed' => $entity->getEmbed()));
 
 	    if( $wykop->isValid() ) {
 		$em->persist($training);

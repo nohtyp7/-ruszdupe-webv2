@@ -18,8 +18,8 @@ class LastDistance{
 	
 
         if($this->_api->isValid()){
-	    if(isset($result['items']) && is_array($result['items']) && count($result['items'])){
-		foreach($result['items'] as $entry){
+	    if(isset($result['data']) && is_array($result['data']) && count($result['data'])){
+		foreach($result['data'] as $entry){
 		    if(!preg_match('/=(.+)/', $entry['body'], $result))
 			continue;
 		
