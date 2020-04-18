@@ -1,0 +1,24 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    getTrainingDetails:
+        class:  TrainingSourceBundle\Service\getTrainingDetails
+        arguments:
+            Enodmondo: @getEndomondoDetails
+            Strava: @getStravaDetails
+            RunKeeper: @getRunKeeperDetails
+    getEndomondoDetails:
+        class:  TrainingSourceBundle\Service\getEndomondoDetails
+    getStravaDetails:
+        class:  TrainingSourceBundle\Service\getStravaDetails
+        arguments:
+            AccessToken: %strava_secret%
+    getRunKeeperDetails:
+        class:  TrainingSourceBundle\Service\getRunKeeperDetails
+    UserStats:
+        class: TrainingSourceBundle\Service\UserStats
+        arguments:
+            entityManager: @doctrine.orm.entity_manager

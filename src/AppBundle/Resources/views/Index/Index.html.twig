@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Index:showIndex{% endblock %}
+
+{% block body %}
+
+<body>
+    <div class="container">
+        <div class="header">
+                <div class="brand_container">
+                        <img src="assets/img/wykop.png" class="img-brand">
+                        <span class="tag"><a href="http://www.wykop.pl/tag/ruszdupe">/#RuszDupe</a></span>
+                </div>
+                <div class="avatar_container">
+                        <a href="?wyloguj">
+                                <img style="background-image: url('/assets/img/wykop.png');" class="img-avatar"alt="">
+                        </a>
+                        <span class="user">Witaj, nieznajomy</span>
+                </div>
+        </div><!-- header -->
+	
+        <div class="content">
+
+	<form method="post" action="/entry/new">
+            <input id="pierwszy" name="dystans[]" type="text" class="pole" placeholder="Wpisz dystans" autofocus="autofocus" value="">
+
+	<a id="dodajDystans" href="#dodajDystans" onclick="dodajDystans()"><div> Dodaj dystans</div></a>
+	<a id="dodajObrazUrl" href="#dodajObrazUrl" onclick="embed()"><div id="dodajObrazUrl"> Dodaj obraz z url</div></a>
+	<textarea name="tresc"  style="width: 98%; border: 1px solid #d5d5d5; font-size: 14px; padding: 8px; font-family: \'Lato\';" placeholder="Opisz swoją wycieczkę" rows="10"></textarea>
+	<input id="dodaj" class="btn" type="submit" value="Dodaj" onclick="dodajWpis()" /><label><input type="checkbox" name="reklama" value="true" checked />
+        
+        Czy chcesz dodać informację o tym skrypcie?</label></form>
+
+
+	</div><!-- content -->
+</div>
+</body>
+
+{% endblock %}

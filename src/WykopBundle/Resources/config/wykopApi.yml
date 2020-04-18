@@ -1,0 +1,4 @@
+services:
+        WykopApi: 
+            class: WykopBundle\Service\WykopApi
+            arguments: [ 'XNdVRKZXF2', 'mwvoN2qhVU' ]

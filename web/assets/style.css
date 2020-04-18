@@ -1,0 +1,251 @@
+@CHARSET "UTF-8";
+/*LATO FTW!!!1ONE*/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+body {
+	background-color: #7f8c8d;
+	color: #7e7e7e;
+	font-family: 'Lato';
+	font-size: 14px;
+	margin-top: 100px;
+	
+}
+.container {
+	margin: 0 auto;
+	background-color: rgb( 236, 236, 236 );
+    box-shadow: 0px 0px 50px 0px rgba( 0, 0, 0, 0.22 );
+    width: 750px;
+    
+    z-index: 2;
+}
+.header a {
+	color: #2e3641;
+	text-decoration: none;
+}
+.header a:hover {
+	color: #000;
+}
+.header {
+	color: #2e3641;
+	height: 80px;
+	width: 750px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	position: relative;
+}
+.brand_container {
+	margin: 30px 20px 20px 20px;
+	height: 48px;
+	float: left;
+}
+.tag {
+	position: relative;
+	left: 5px;
+	font-size: 20px;
+
+}
+.avatar_container {
+	margin: 20px;
+	height: 48px;
+	float: right;
+}
+.img-brand {
+
+	width: 153px;
+	height:32px;
+	float: left;
+	z-index: 2;
+}
+.user {
+	right: 10px;
+	bottom: -14px;
+	font-size: 18px;
+	position: relative;
+	
+	float: right;
+}
+.img-avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  
+  display: block;
+  float:right;
+}
+.img-avatar:hover{
+<<<<<<< HEAD
+	background-image: url("assets/img/wyloguj.jpg")!important;
+=======
+	background-image: url("/assets/img/wyloguj.jpg")!important;
+>>>>>>> 8a243c46b403294115cd0fd0f42322d5e9484a10
+}
+.content {
+	padding: 20px;
+	width: 600px;
+	margin-right: auto; 
+	margin-left: auto; 
+}
+.pole{
+	float: left;
+	clear: left;
+	border: 1px solid #d5d5d5;
+	font-size: 14px;
+	padding: 8px;
+	margin: 0px;
+	margin-bottom: 2px;
+}
+
+.textarea {
+	float: left;
+	border: 1px solid #d5d5d5;
+	font-size: 14px;
+	padding: 8px;
+}
+.btn {
+	background-color: #9dd8d3;
+	padding: 10px;
+	border: 0px;
+	color: #fff;
+	font-family: 'Lato';
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+#add_distance_btn{
+	float: left;
+	margin-bottom: 14px;
+	margin-top: 11px;
+}
+
+#add_date_btn{
+    float: right;
+    transform: scale(0.9);
+    position: relative;
+    top: 10px;
+}
+
+.sukces{
+	width: 128px;  
+	margin-right: auto; 
+	margin-left: auto; 
+	text-align: center; 
+	color: green;
+}
+
+a{
+	text-decoration: none;
+	color: #7F7F7F;
+	border: none;
+}
+
+.fail{
+	margin-right: auto; 
+	margin-left: auto; 
+	width: 333px;
+	color: #FF0000;
+}
+
+.fail_blad{
+	margin-right: auto; 
+	margin-left: auto; 
+	width: 333px;
+}
+
+label.info{
+	position: relative;
+	font-size: 9px;
+}
+
+div#dodajObrazUrl{
+	float:left;
+	clear: both;
+	width: 150px;
+	padding: 10px;
+	background-color: #9dd8d3;
+	color: white;
+	vertical-align: middle;
+}
+
+a#dodajDystans div{
+    width: 150px;
+    padding: 10px;
+    background-color: #9dd8d3;
+    color: white;
+    vertical-align: middle;
+
+    float:left;
+    clear: both;
+    margin-bottom:2px;
+}
+
+img#loading{
+	display: block;
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+
+form[name=wykopbundle_training] input,
+form[name=wykopbundle_training] select#wykopbundle_training_idCity,
+form[name=wykopbundle_training] select#wykopbundle_training_idTag{
+    width: 80%;
+}
+
+form[name=wykopbundle_training] input,
+form[name=wykopbundle_training] select{
+    background: white;
+    clear: left;
+    border: 1px solid #d5d5d5;
+    font-size: 14px;
+    padding: 8px;
+    margin: 0px;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+}
+
+form[name=wykopbundle_training] textarea{
+    resize: vertical;
+    width: 100%;
+    min-height: 128px;
+    box-sizing: border-box;
+}
+
+div#wykopbundle_training_distance label{
+    display:none;
+}
+
+input#wykopbundle_training_embed{
+    width: 100%;
+}
+
+input#wykopbundle_training_ad {
+  width: initial;
+  margin-left: 16px;
+  width: 32px;
+  height: 32px;
+}
+
+label[for=wykopbundle_training_ad]{
+    position: relative;
+    top: -12px;
+}
+
+select#wykopbundle_training_Tag, select#wykopbundle_training_City {
+  width: 100%;
+}
+
+.content::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;     
+    opacity: 0.2;
+    z-index: -1;
+}

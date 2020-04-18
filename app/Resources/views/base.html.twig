@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% set token = app.security.getToken() %}
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="description">
+	<title>Rusz dupę!</title>
+	<link rel="stylesheet" media="screen" href="/assets/style.css" />
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="/assets/js/jquery-2.1.4.min.js"></script>
+	<script src="/assets/js/js.js?{{ date().timestamp }}"></script>
+</head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

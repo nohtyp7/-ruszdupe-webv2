@@ -1,0 +1,13 @@
+training_source:
+    resource: "@TrainingSourceBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+wykop:
+    resource: "@WykopBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
