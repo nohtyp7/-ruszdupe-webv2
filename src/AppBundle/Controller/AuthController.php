@@ -35,23 +35,23 @@ class AuthController extends Controller
 	    $session->set('token', $connect_data['token']);
 	    $session->set('sign', $connect_data['sign']);
 
-	    $profile = $wykop->doRequest('profile/index/'.$connect_data['login']);
+	    $profile = $wykop->doRequest('Profiles/Index/'.$connect_data['login']);
 	    if(!$wykop->isValid()){
-		    throw new Exception($this->api->getError());
+		    throw new \Exception($wykop->getError());
 	    }else{
-		$answer = $wykop->doRequest('user/login', array('login' => $profile['login'], 'accountkey' => $session->get('token')));
-		if(!$wykop->isValid()) throw new Exception ($this->api->getError());
+		// $answer = $wykop->doRequest('user/login', array('login' => $profile['data']['login'], 'accountkey' => $session->get('token')));
+		// if(!$wykop->isValid()) throw new \Exception ($wykop->getError());
 			
 		$roles = ['ROLE_USER_WYKOP'];
 		
-		if($profile['login'] === 'anonim1133')
+		if($profile['data']['login'] === 'anonim1133')
 		    $roles[] = 'ROLE_ADMIN';
 		
-		$token = new UsernamePasswordToken($profile['login'], $answer['userkey'], 'wykop', $roles);
-		$token->setAttribute('wykop_login', $profile['login']);
-		$token->setAttribute('wykop_sex', $profile['sex']);
-		$token->setAttribute('wykop_group', $profile['author_group']);
-		$token->setAttribute('wykop_avatar', $profile['avatar_med']);
+		$token = new UsernamePasswordToken($profile['data']['login'], $session->get('token'), 'wykop', $roles);
+		$token->setAttribute('wykop_login', $profile['data']['login']);
+		$token->setAttribute('wykop_sex', $profile['data']['sex']);
+		$token->setAttribute('wykop_group', $profile['data']['rank']);
+		$token->setAttribute('wykop_avatar', $profile['data']['avatar']);
 		$token->setAttribute('wykop_login_date', new \DateTime('now'));
 		
 		$this->get('security.token_storage')->setToken($token);

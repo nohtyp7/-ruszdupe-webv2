@@ -18,7 +18,7 @@ class WykopApi{
 	*/
 
 	protected $userAgent = 'RuszDupe';
-	protected $apiDomain = 'http://a.wykop.pl/';
+	protected $apiDomain = 'http://a2.wykop.pl/';
 	protected $key = null;
 	protected $secret = null;
 	protected $userKey = null;
@@ -195,7 +195,7 @@ class WykopApi{
 
 	{
 
-		$url = $this->apiDomain . 'user/connect/' . $this->getKey();
+		$url = $this->apiDomain . 'login/connect/' . $this->getKey();
 
 		if ($redirectUrl !== null)
 
@@ -263,7 +263,7 @@ class WykopApi{
 
 				$this->isValid = false;
 
-				$this->error = $json['error']['message'];
+				$this->error = $json['error']['message_pl'];
 
 			} else {
 

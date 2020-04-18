@@ -14,7 +14,7 @@ class LastDistance{
     
     function get($tag){
 	$tag = ltrim($tag, '#'); // Delete redundant # from tag
-        $result = $this->_api->doRequest('tag/entries/'.$tag);
+        $result = $this->_api->doRequest('Tags/Entries/'.$tag);
 	
 
         if($this->_api->isValid()){
