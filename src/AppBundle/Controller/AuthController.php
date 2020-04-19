@@ -39,15 +39,15 @@ class AuthController extends Controller
 	    if(!$wykop->isValid()){
 		    throw new \Exception($wykop->getError());
 	    }else{
-		// $answer = $wykop->doRequest('user/login', array('login' => $profile['data']['login'], 'accountkey' => $session->get('token')));
-		// if(!$wykop->isValid()) throw new \Exception ($wykop->getError());
+		$answer = $wykop->doRequest('login/index', array('login' => $profile['data']['login'], 'accountkey' => $connect_data['token']));
+		if(!$wykop->isValid()) throw new \Exception ($wykop->getError());
 			
 		$roles = ['ROLE_USER_WYKOP'];
 		
 		if($profile['data']['login'] === 'anonim1133')
 		    $roles[] = 'ROLE_ADMIN';
 		
-		$token = new UsernamePasswordToken($profile['data']['login'], $session->get('token'), 'wykop', $roles);
+		$token = new UsernamePasswordToken($profile['data']['login'], $answer['data']['userkey'], 'wykop', $roles);
 		$token->setAttribute('wykop_login', $profile['data']['login']);
 		$token->setAttribute('wykop_sex', $profile['data']['sex']);
 		$token->setAttribute('wykop_group', $profile['data']['rank']);

@@ -295,7 +295,7 @@ class TrainingController extends Controller {
 	    if( $wykop->isValid() ) {
 		$em->persist($training);
 		$em->flush();
-		return $this->redirect('https://wykop.pl/wpis/' . (int) $result['id']);
+		return $this->redirect('https://wykop.pl/wpis/' . (int) $result['data']['id']);
 	    } else {
 		$error = new FormError('Wykop: ' . $wykop->getError());
 		$form->addError($error);

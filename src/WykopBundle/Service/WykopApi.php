@@ -345,13 +345,13 @@ class WykopApi{
 
 	{
 
-		if ($post !== null)
+		// if ($post !== null)
 
-		{
+		// {
 
-			ksort($post);
+		// 	ksort($post);
 
-		}
+		// }
 
 		return md5($this->secret . $url . ($post === null ? '' : implode(',', $post)));
 
